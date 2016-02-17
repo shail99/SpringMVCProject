@@ -5,12 +5,23 @@
 <head>
 <link rel="stylesheet" href="jsp/jqtree.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="http://d3js.org/d3.v3.min.js">
+</script>
 <title>JqTreee</title>
 </head>
 <body>
+
 <h1>
 	First Spring MVC Application
 </h1>
+
+<script>
+
+	d3.select("h1").text("Spring MVC Application written with D3");
+	d3.select("body").append("h2").text("Adding new element within d3");
+
+</script>
+
 <script src="jsp/jquery-1.12.0.min.js" type="text/javascript"></script>
 <script src="jsp/tree.jquery.js" type="text/javascript"></script>
 <script src="jsp/jquery.cookie.js" type="text/javascript"></script>
