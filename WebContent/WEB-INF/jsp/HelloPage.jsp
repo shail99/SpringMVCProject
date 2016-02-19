@@ -22,9 +22,9 @@
 
 </script>
 
-<script src="jsp/jquery-1.12.0.min.js" type="text/javascript"></script>
-<script src="jsp/tree.jquery.js" type="text/javascript"></script>
-<script src="jsp/jquery.cookie.js" type="text/javascript"></script>
+<script src="/jqtree/jquery-1.12.0.min.js" type="text/javascript"></script>
+<script src="/jqtree/tree.jquery.js" type="text/javascript"></script>
+<script src="/jqtree/jquery.cookie.js" type="text/javascript"></script>
 
 <div id="tree1">
 	<script>

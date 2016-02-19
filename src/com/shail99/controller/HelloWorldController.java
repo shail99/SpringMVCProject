@@ -35,4 +35,9 @@ public class HelloWorldController{
 		
 		return model;
 	}
+	
+//	@RequestMapping("/jqtree/tree.jquery.js")
+//	protected void printHello(){
+//		System.out.println("In here");
+//	}
 }
