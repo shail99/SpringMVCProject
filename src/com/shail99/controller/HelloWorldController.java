@@ -15,23 +15,23 @@ public class HelloWorldController{
 
 	@RequestMapping("/welcome")
 	protected ModelAndView helloWorld(){
-
+		System.out.println("Hellos");
 		ModelAndView model = new ModelAndView("HelloPage");
 		
-		File root_dir = new File("/Users/shaileshpujari/paymentTimingLogs/20160212");
+		/*File root_dir = new File("/Users/shaileshpujari/paymentTimingLogs/20160212");
 		Directory my_dir = new Directory();
 		Directory dir = my_dir.convertDirToJsonFile(root_dir);
 		dir.printDirectoryStructure(0);
 		
 		GsonBuilder builder = new GsonBuilder();
 		builder.setPrettyPrinting();
-		Gson gson = builder.create();
+		Gson gson = builder.create();*/
 		
 		
-		//System.out.println(gson.toJson(dir));
+		//System.out.println(gson.toJson(dir)); gson.toJson(dir)
 		
 		
-		model.addObject("msg", gson.toJson(dir));
+		model.addObject("msg", "Shailesh");
 		
 		return model;
 	}
