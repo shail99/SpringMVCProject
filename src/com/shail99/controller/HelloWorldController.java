@@ -1,43 +1,36 @@
 package com.shail99.controller;
 
-import java.io.File;
-import com.shail99.businessLogic.*;
+import java.util.Map;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 @Controller
 public class HelloWorldController{
 
-	@RequestMapping("/welcome")
-	protected ModelAndView helloWorld(){
-		System.out.println("Hellos");
+	@RequestMapping("/welcome/{countryName}/{userName}")
+	protected ModelAndView helloWorld(@PathVariable("userName") String name, 
+			@PathVariable("countryName") String country){
 		ModelAndView model = new ModelAndView("HelloPage");
 		
-		/*File root_dir = new File("/Users/shaileshpujari/paymentTimingLogs/20160212");
-		Directory my_dir = new Directory();
-		Directory dir = my_dir.convertDirToJsonFile(root_dir);
-		dir.printDirectoryStructure(0);
-		
-		GsonBuilder builder = new GsonBuilder();
-		builder.setPrettyPrinting();
-		Gson gson = builder.create();*/
-		
-		
-		//System.out.println(gson.toJson(dir)); gson.toJson(dir)
-		
-		
-		model.addObject("msg", "Shailesh");
+		model.addObject("msg", "Hello "+name+". Welcome to "+country);
 		
 		return model;
 	}
 	
-//	@RequestMapping("/jqtree/tree.jquery.js")
-//	protected void printHello(){
-//		System.out.println("In here");
-//	}
+	
+	@RequestMapping("/hello/{countryName}/{userName}")
+	protected ModelAndView sayHello(@PathVariable Map<String,String> pathVars){
+		ModelAndView model = new ModelAndView("HelloPage");
+		
+		String name = pathVars.get("userName");
+		String country = pathVars.get("countryName");
+		
+		model.addObject("msg", "Hello "+name+". Welcome to "+country);
+		
+		return model;
+	}
+	
 }
